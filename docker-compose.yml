@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  insider-api:
+    build: .
+    container_name: insider-deals
+    ports:
+      - "8000:8000"
+    # сохраняем SQLite вне контейнера
+    volumes:
+      - ./insiders.db:/app/insiders.db
+    restart: unless-stopped

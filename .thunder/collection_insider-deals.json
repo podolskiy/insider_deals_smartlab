@@ -1,0 +1,55 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "Insider Deals API",
+  "dateExported": "2025-11-30T07:01:29Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "name": "Admin",
+      "requests": [
+        "update-request",
+        "reset-request"
+      ]
+    },
+    {
+      "name": "Public",
+      "requests": [
+        "health-request",
+        "buybacks-request",
+        "errors-request"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "health-request",
+      "name": "GET /health",
+      "url": "{{baseUrl}}/health",
+      "method": "GET"
+    },
+    {
+      "id": "update-request",
+      "name": "POST /update",
+      "url": "{{baseUrl}}/update",
+      "method": "POST"
+    },
+    {
+      "id": "buybacks-request",
+      "name": "GET /buybacks",
+      "url": "{{baseUrl}}/buybacks",
+      "method": "GET"
+    },
+    {
+      "id": "errors-request",
+      "name": "GET /errors",
+      "url": "{{baseUrl}}/errors",
+      "method": "GET"
+    },
+    {
+      "id": "reset-request",
+      "name": "POST /reset",
+      "url": "{{baseUrl}}/reset",
+      "method": "POST"
+    }
+  ]
+}

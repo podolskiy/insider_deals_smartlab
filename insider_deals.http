@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:8000
+
+### Health
+GET {{baseUrl}}/health
+Accept: application/json
+
+###
+
+### Update
+POST {{baseUrl}}/update
+Content-Type: application/json
+Accept: application/json
+
+{
+  // TODO: заполни тело запроса, если нужно
+}
+
+###
+
+### Buybacks
+GET {{baseUrl}}/buybacks
+Accept: application/json
+
+###
+
+### Errors
+GET {{baseUrl}}/errors
+Accept: application/json
+
+###
+
+### Reset
+POST {{baseUrl}}/reset
+Accept: application/json

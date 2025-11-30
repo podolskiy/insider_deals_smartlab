@@ -1,0 +1,54 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# virtual envs
+.venv/
+venv/
+env/
+
+# pytest cache
+.pytest_cache/
+
+# mypy / pyright / pylance
+.mypy_cache/
+.dmypy.json
+.pytype/
+
+# --- FastAPI / Uvicorn / Logs ---
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# PyCharm / IDEA
+.idea/
+
+# --- SQLite Database ---
+# если хочешь игнорировать БД — раскомментируй:
+insiders.db
+*.sqlite
+*.sqlite3
+*.db
+
+# --- Docker ---
+# игнорируем артефакты сборки
+*.egg-info/
+dist/
+build/
+
+# Docker-compose override files
+docker-compose.override.yml
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- ZIP archives ---
+*.zip
