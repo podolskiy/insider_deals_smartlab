@@ -5,7 +5,7 @@ from typing import Optional
 
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import String, Integer, Date, DateTime, Text
+from sqlalchemy import String, Integer, Date, DateTime, Text, Float
 
 
 class Base(DeclarativeBase):
@@ -21,6 +21,7 @@ class DealDB(Base):
     deal_type: Mapped[str] = mapped_column(String)  # BUYBACK / OTHER
     shares_count: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     deal_date: Mapped[Optional[date]] = mapped_column(Date, nullable=True)
+    volume_rub: Mapped[Optional[float]] = mapped_column(Float, nullable=True, )
     source_url: Mapped[str] = mapped_column(String, unique=True)
     raw_text: Mapped[str] = mapped_column(Text)
 

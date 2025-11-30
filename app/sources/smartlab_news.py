@@ -10,9 +10,12 @@ from bs4 import BeautifulSoup
 from app.data import infer_ticker
 from app.models import InsiderDeal, InsiderDealType
 from app.parsers import (
+    extract_news_text,
     extract_visible_text,
+    format_volume_rub,
     try_parse_shares_count,
     try_parse_first_russian_date,
+    try_parse_volume_rub, 
 )
 from app.services.db_service import (
     is_article_loaded,
@@ -87,7 +90,9 @@ class SmartLabNewsSource:
             deal_type = self._detect_deal_type(text)
             shares = try_parse_shares_count(text)
             deal_date = try_parse_first_russian_date(text)
+            volume_rub = try_parse_volume_rub(text)
             ticker = infer_ticker(issuer or "")
+            raw_text = extract_news_text(html)
 
             if not ticker:
                 ticker_from_link = self._extract_ticker_from_html(html)
@@ -101,7 +106,8 @@ class SmartLabNewsSource:
                 shares_count=shares,
                 deal_date=deal_date,
                 source_url=url,
-                raw_text=text,
+                raw_text=raw_text,
+                volume_rub=volume_rub,
             )
             await save_deal(session, deal)
             await mark_article_loaded(session, url)

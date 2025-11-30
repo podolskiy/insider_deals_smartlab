@@ -33,6 +33,7 @@ async def save_deal(session: AsyncSession, deal: InsiderDeal) -> None:
         deal_type=deal.deal_type.value,
         shares_count=deal.shares_count,
         deal_date=deal.deal_date,
+        volume_rub=deal.volume_rub, 
         source_url=deal.source_url,
         raw_text=deal.raw_text,
     )
